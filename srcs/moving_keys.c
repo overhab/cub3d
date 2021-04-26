@@ -7,9 +7,10 @@ static	void	KEY_W(t_cub *cub)
 	t_player		player;
 
 	player = cub->player;
-	x = player.x + cosf(cub->player.dir) * PLSPEED * 3;
-	y = player.y + sinf(cub->player.dir) * PLSPEED * 3;
-	if (cub->map[(int)(y / SCALE)][(int)(x / SCALE)] != '1')
+	x = player.x + cosf(cub->player.dir) * PLSPEED * 2;
+	y = player.y + sinf(cub->player.dir) * PLSPEED * 2;
+	if (cub->map[(int)(y / SCALE)][(int)(x / SCALE)] != '1'
+		&& cub->map[(int)(y / SCALE)][(int)(x / SCALE)] != '2')
 	{
 		cub->player.y += sinf(cub->player.dir) * PLSPEED;
 		cub->player.x += cosf(cub->player.dir) * PLSPEED;
@@ -23,9 +24,10 @@ static	void	KEY_S(t_cub *cub)
 	t_player		player;
 
 	player = cub->player;
-	x = player.x - cosf(cub->player.dir) * PLSPEED * 3;
-	y = player.y - sinf(cub->player.dir) * PLSPEED * 3;
-	if (cub->map[(int)(y / SCALE)][(int)(x / SCALE)] != '1')
+	x = player.x - cosf(cub->player.dir) * PLSPEED * 2;
+	y = player.y - sinf(cub->player.dir) * PLSPEED * 2;
+	if (cub->map[(int)(y / SCALE)][(int)(x / SCALE)] != '1'
+		&& cub->map[(int)(y / SCALE)][(int)(x / SCALE)] != '2')
 	{
 		cub->player.y -= sinf(cub->player.dir) * PLSPEED;
 		cub->player.x -= cosf(cub->player.dir) * PLSPEED;
@@ -39,9 +41,10 @@ static	void	KEY_D(t_cub *cub)
 	t_player		player;
 
 	player = cub->player;
-	x = player.x + cosf(cub->player.dir + M_PI_2) * PLSPEED * 3;
-	y = player.y + sinf(cub->player.dir + M_PI_2) * PLSPEED * 3;
-	if (cub->map[(int)(y / SCALE)][(int)(x / SCALE)] != '1')
+	x = player.x + cosf(cub->player.dir + M_PI_2) * PLSPEED * 2;
+	y = player.y + sinf(cub->player.dir + M_PI_2) * PLSPEED * 2;
+	if (cub->map[(int)(y / SCALE)][(int)(x / SCALE)] != '1'
+		&& cub->map[(int)(y / SCALE)][(int)(x / SCALE)] != '2')
 	{
 		cub->player.y += sinf(cub->player.dir + M_PI_2) * PLSPEED;
 		cub->player.x += cosf(cub->player.dir + M_PI_2) * PLSPEED;
@@ -55,9 +58,10 @@ static	void	KEY_A(t_cub *cub)
 	t_player		player;
 
 	player = cub->player;
-	x = player.x - cosf(cub->player.dir + M_PI_2) * PLSPEED * 3;
-	y = player.y - sinf(cub->player.dir + M_PI_2) * PLSPEED * 3;
-	if (cub->map[(int)(y / SCALE)][(int)(x / SCALE)] != '1')
+	x = player.x - cosf(cub->player.dir + M_PI_2) * PLSPEED * 2;
+	y = player.y - sinf(cub->player.dir + M_PI_2) * PLSPEED * 2;
+	if (cub->map[(int)(y / SCALE)][(int)(x / SCALE)] != '1'
+		&& cub->map[(int)(y / SCALE)][(int)(x / SCALE)] != '2')
 	{
 		cub->player.y -= sinf(cub->player.dir + M_PI_2) * PLSPEED;
 		cub->player.x -= cosf(cub->player.dir + M_PI_2) * PLSPEED;
