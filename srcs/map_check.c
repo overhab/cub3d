@@ -45,7 +45,8 @@ int	map_compare(t_cub *cub, int e)
 		d++;
 	while (cub->map[e][d] != '\0')
 	{
-		if (cub->map[e][d] == '0' || cub->map[e][d] == '2')
+		if (cub->map[e][d] == '0' || cub->map[e][d] == '2'
+				|| ft_strchr_plus("NEWS", cub->map[e][d]))
 			if (map_compare_hard(cub->map[e], cub->map[e - 1],
 					cub->map[e + 1], d) == -1)
 				return (error_out(cub, "Wrong map format"));
