@@ -5,7 +5,7 @@ int	set_resolution(t_cub *cub, char *line)
 	if (cub->set.set_R == 1 || ft_strlen(line) <= 1)
 		return (error_out(cub, "Double key (Resolution)"));
 	cub->index = 1;
-	if (search_for_char(line, cub))
+	if (search_for_char(line, cub) || line[1] != ' ')
 		return (error_out(cub, "Wrong resolution"));
 	cub->set.res_w = ft_atoi(cub, line);
 	cub->set.res_h = ft_atoi(cub, line);
@@ -53,7 +53,7 @@ int	set_colors(t_cub *cub, char *line, char ch)
 	int	g;
 	int	b;
 
-	if (check_color_format(cub, line))
+	if (check_color_format(cub, line) || line[1] != ' ')
 		return (error_out(cub, "Wrong color setting"));
 	cub->index = 1;
 	r = ft_atoi_color(cub, line);

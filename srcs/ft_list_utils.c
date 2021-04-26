@@ -10,9 +10,7 @@ int	ft_atoi(t_cub *cub, const char *nptr)
 	space_skip(cub, nptr);
 	if ((nptr[cub->index] == '+') || (nptr[cub->index] == '-'))
 	{
-		if (nptr[cub->index] == '-')
-			d *= -1;
-		cub->index++;
+		return (-1);
 	}
 	while (nptr[cub->index] >= '0' && nptr[cub->index] <= '9')
 	{
