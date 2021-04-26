@@ -40,7 +40,7 @@ int	parsig(t_cub *cub, char *line)
 	if (line[0] == '\0' && cub->begin == 1)
 		return (cub->error = -2);
 	if (line[0] == ' ' || line[0] == '1' || line[0] == '\0')
-		return (0);
+		return (check_what(cub, line));
 	return (cub->error = -2);
 }
 
@@ -85,6 +85,8 @@ int	ft_parsing(char *file, t_cub *cub)
 	}
 	if (((line[0] == ' ' || line[0] == '1') && ft_is_space(cub, line) == 1))
 		ft_lstadd(&head, line, cub);
+	else
+		cub->error = -2;
 	close(fd);
 	free(line);
 	parsing_2(cub, head);

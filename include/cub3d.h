@@ -241,6 +241,7 @@ int			check_valid_path(char *path);
 int			error_out(t_cub *cub, char *error);
 int			map_check(t_cub *cub);
 int			map_checkk(char *map, int len);
+int			check_what(t_cub *cub, char *line);
 int			map_first_last(t_cub *cub);
 int			map_compare(t_cub *cub, int e);
 int			ft_strlen_space(const char *str);

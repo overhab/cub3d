@@ -27,20 +27,22 @@ int	check_color_format(t_cub *cub, char *line)
 
 	comma = 0;
 	cub->index = 1;
-	if (cub->set.set_CF == 1 && line[0] == 'F')
-		return (1);
-	if (cub->set.set_CC == 1 && line[0] == 'C')
-		return (1);
 	while (line[cub->index] != '\0')
 	{
 		space_skip(cub, line);
-		if (line[cub->index] == '\0')
-			break ;
-		if (line[cub->index] == ',')
-			comma++;
-		if (!(ft_isdigit(line[cub->index])) && line[cub->index] != ',')
+		if (!(ft_isdigit(line[cub->index])))
 			return (1);
 		cub->index++;
+		space_skip(cub, line);
+		if (line[cub->index] == ',')
+		{
+			cub->index++;
+			comma++;
+			space_skip(cub, line);
+			if (comma == 2 && !(ft_isdigit(line[cub->index])))
+				return (1);
+		}
+		space_skip(cub, line);
 	}
 	if (comma != 2)
 		return (1);

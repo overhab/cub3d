@@ -37,6 +37,10 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 int	check_color_two(t_cub *cub, char *line)
 {
 	cub->index = 1;
+	if (cub->set.set_CF == 1 && line[0] == 'F')
+		return (1);
+	if (cub->set.set_CC == 1 && line[0] == 'C')
+		return (1);
 	while (line[cub->index] != '\0')
 	{
 		space_skip(cub, line);

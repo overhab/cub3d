@@ -28,6 +28,7 @@ SRCS		=	./srcs/cub3d.c \
 				./srcs/moving_keys.c \
 				./srcs/get_next_line.c \
 				./srcs/ft_list_utils.c \
+				./srcs/check_what.c \
 
 CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -f
